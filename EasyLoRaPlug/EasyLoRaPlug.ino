@@ -4,11 +4,17 @@ void setup() {
   setupSerial();
   setupLED();
   setupSpeaker();
+  setupWiFi();
   setupPowerSwitch();
+  delay(10000);
+  setupOTA();
+  onSpeaker();
+  delay(500);
+  offSpeaker();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Serial.println("Start");
   onLED1();
   delay(1000);
   offLED1();
@@ -17,6 +23,7 @@ void loop() {
   delay(1000);
   offLED2();
   delay(1000);
+  /*
   onPowerSwitch1();
   delay(2000);
   offPowerSwitch1();
@@ -33,4 +40,6 @@ void loop() {
   delay(500);
   offSpeaker();
   delay(500);
+*/  
+  waitingForOTA();
 }
